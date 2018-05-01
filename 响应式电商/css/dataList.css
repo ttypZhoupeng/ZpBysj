@@ -1,0 +1,7 @@
+section {
+  padding: 80px 0;
+  height: 100%;
+}
+#c1 > div {
+  text-align: center;
+}

@@ -121,6 +121,7 @@ var flag = true;
     // 导航菜单
     $.get("http://h6.duchengjiu.top/shop/api_cat.php",function(response){
         var obj = response;
+        window.localStorage.setItem('navList', JSON.stringify(obj))
         for (var i=0;i<obj.data.length;i++){
             $(".head-white .yc-itemNav ul").append("<li><a href='list.html?cat_id="+obj.data[i].cat_id+"'><img src='./images/"+(i+1)+".png'>" +obj.data[i].cat_name+ "</a></li>")
         }
