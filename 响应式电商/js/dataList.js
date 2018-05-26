@@ -37,5 +37,32 @@ $(function(){
     chart.interval().position('catName*catCount').color('catName')
     // Step 4: 渲染图表
     chart.render();
+
+
+    var data2 = [{ year: '9', value: 155 }, { year: '10', value: 599 }, { year: '11', value: 1666 }, { year: '12', value: 2000 }, { year: '1', value: 1400 }, { year: '2', value: 5000 }, { year: '3', value: 5555 }, { year: '4', value: 8034 }, { year: '5', value: 10000 }];
+    var chart2 = new G2.Chart({
+        container: 'mountNode',
+        forceFit: true,
+        width: 800,
+        height: 400,
+    });
+    chart2.source(data2);
+    chart2.scale('value', {
+        min: 0
+    });
+    chart2.scale('year', {
+        range: [0, 1]
+    });
+    chart2.tooltip({
+        crosshairs: {
+            type: 'line'
+        }
+    });
+    chart2.line().position('year*value');
+    chart2.point().position('year*value').size(4).shape('circle').style({
+        stroke: '#fff',
+        lineWidth: 1
+    });
+    chart2.render();
        
 })
